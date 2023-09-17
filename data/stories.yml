@@ -1,0 +1,58 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_cheer_up
+
+- story: angry path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_angry
+  - action: utter_angry
+
+- story: emotion path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_emotion
+  - action: utter_emotion
+
+- story: news path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_news
+  - action: custom_action_retrieve_news 
+
+- story: currency path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_currency
+  - action: custom_action_currency
