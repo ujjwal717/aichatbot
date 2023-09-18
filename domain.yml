@@ -1,0 +1,63 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - mood_angry
+  - mood_emotion
+  - get_news
+  - get_currency
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Happy to see you again, how may I help you today?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Staying happy does not cost anything, so just smile :)"
+  - text: "Smiling for a photo makes the photo better, so keep smiling to make life better"  
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "Are you fine now?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "Happy to help :)"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "See you again!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_angry:
+  - text: "Everone gets angry but try to control it as it may affect health adversely!"
+  - text: "Remember, getting angry will not solve anything"
+  - text: "Try to control that anger, it is not good for you!"
+
+  utter_emotion:
+  - text: "People feel low but we should know that we need to just keep trying!"
+  - text: "Everyone has a bad day but we should know that we are bigger than any possible problems!"
+  - text: "Getting emotional is fine, just take care of yourself and do what you love to do :)"
+
+  utter_news:
+  - text: -"Here are the top news"
+
+actions:
+  - custom_action_retrieve_news  
+  - custom_action_currency
+
+  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
